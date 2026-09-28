@@ -37,11 +37,14 @@ export default function Gear() {
       const { gsap, ScrollTrigger } = win;
       gsap.registerPlugin(ScrollTrigger);
 
+      // gsap dari CDN bertipe any → bungkus toArray biar type-safe
+      const toArray = gsap.utils.toArray as <T = HTMLElement>(target: string) => T[];
+
       const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
       ctxRef.current = gsap.context(() => {
         const title = section.querySelector('.gear-title');
-        const infos = gsap.utils.toArray<HTMLElement>('.gear-info');
+        const infos = toArray('.gear-info');
 
         if (isDesktop) {
           // ===== DESKTOP: drone terbang konvergen + pin =====
@@ -79,7 +82,7 @@ export default function Gear() {
               { y: 0, opacity: 1, ease: 'power2.out', duration: 0.5 }, 0.6);
 
           // Float loop TERPISAH: hanya gerakkan <img> dalam, bukan wrapper
-          const innerImgs = gsap.utils.toArray<HTMLElement>('.gear-float');
+          const innerImgs = toArray('.gear-float');
           innerImgs.forEach((img, i) => {
             gsap.to(img, {
               y: i === 0 ? -14 : -18,
@@ -93,7 +96,7 @@ export default function Gear() {
           ScrollTrigger.refresh();
         } else {
           // ===== MOBILE: fallback fade-in + stagger sederhana =====
-          const targets = [title, ...gsap.utils.toArray<HTMLElement>('.gear-drone'), ...infos].filter(Boolean);
+          const targets = [title, ...toArray('.gear-drone'), ...infos].filter(Boolean);
           gsap.fromTo(targets,
             { y: 40, opacity: 0 },
             {
