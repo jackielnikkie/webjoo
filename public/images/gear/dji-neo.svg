@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Propellers (smaller, compact) -->
+  <g stroke="#e5e7eb" stroke-width="3" opacity="0.85">
+    <ellipse cx="110" cy="110" rx="42" ry="11" transform="rotate(-45 110 110)"/>
+    <ellipse cx="290" cy="110" rx="42" ry="11" transform="rotate(45 290 110)"/>
+    <ellipse cx="110" cy="290" rx="42" ry="11" transform="rotate(45 110 290)"/>
+    <ellipse cx="290" cy="290" rx="42" ry="11" transform="rotate(-45 290 290)"/>
+  </g>
+
+  <!-- Arms (shorter) -->
+  <g stroke="#9ca3af" stroke-width="11" stroke-linecap="round">
+    <line x1="200" y1="200" x2="110" y2="110"/>
+    <line x1="200" y1="200" x2="290" y2="110"/>
+    <line x1="200" y1="200" x2="110" y2="290"/>
+    <line x1="200" y1="200" x2="290" y2="290"/>
+  </g>
+
+  <!-- Motor hubs -->
+  <g fill="#111827" stroke="#e5e7eb" stroke-width="3">
+    <circle cx="110" cy="110" r="12"/>
+    <circle cx="290" cy="110" r="12"/>
+    <circle cx="110" cy="290" r="12"/>
+    <circle cx="290" cy="290" r="12"/>
+  </g>
+
+  <!-- Compact central body -->
+  <rect x="165" y="165" width="70" height="70" rx="30" fill="#1f2937" stroke="#e5e7eb" stroke-width="3"/>
+
+  <!-- Camera -->
+  <circle cx="200" cy="215" r="16" fill="#0b0f14" stroke="#e5e7eb" stroke-width="3"/>
+  <circle cx="200" cy="215" r="6" fill="#e5e7eb"/>
+
+  <!-- Prop guard accent ring -->
+  <circle cx="200" cy="200" r="46" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="6 8" opacity="0.4"/>
+</svg>

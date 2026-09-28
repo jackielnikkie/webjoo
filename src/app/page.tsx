@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Portfolio from '@/components/Portfolio';
 import Services from '@/components/Services';
+import Gear from '@/components/Gear';
 import About from '@/components/About';
 import Location from '@/components/Location';
 import Contact from '@/components/Contact';
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Portfolio />
       <Services />
+      <Gear />
       <About />
       <Location />
       <Contact />
